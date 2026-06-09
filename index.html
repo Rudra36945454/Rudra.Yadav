@@ -1,190 +1,403 @@
+Here’s the updated full code with the main text right-aligned and a dedicated profile picture area in the hero section.
+
+Replace `your-profile-photo.jpg` with your actual image file name or image link.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rudra Yadav | Student Athlete</title>
+
 <style>
-  <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-body{
-    background:#FFFFFF;
-    color:#111827;
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #FFF8E7;
+    color: #111827;
 }
 
 /* Navigation */
-nav{
-    background:#111827;
-    padding:15px;
-    position:sticky;
-    top:0;
-    z-index:1000;
+nav {
+    background: #08111F;
+    padding: 16px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #D4AF37;
 }
 
-nav ul{
-    list-style:none;
-    display:flex;
-    justify-content:center;
-    gap:30px;
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
 }
 
-nav a{
-    color:#FFFFFF;
-    text-decoration:none;
-    font-weight:bold;
-    transition:0.3s;
+nav a {
+    color: #FFF8E7;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    outline: none;
 }
 
-nav a:hover{
-    color:#FF5733;
+nav a:hover,
+nav a:focus {
+    color: #D4AF37;
 }
 
 /* Hero Section */
-.hero{
-    height:90vh;
+.hero {
+    min-height: 90vh;
     background:
-        linear-gradient(rgba(17,24,39,.75),rgba(17,24,39,.75)),
-        url('https://images.unsplash.com/photo-1546519638-68e109498ffc');
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:white;
+        linear-gradient(rgba(8, 17, 31, 0.82), rgba(8, 17, 31, 0.82)),
+        url("https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: #FFF8E7;
+    padding: 60px 10%;
 }
 
-.hero-content h1{
-    font-size:4rem;
-    margin-bottom:15px;
+.hero-layout {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
 }
 
-.hero-content p{
-    font-size:1.3rem;
-    margin-bottom:20px;
+.profile-picture {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    padding: 8px;
+    background: linear-gradient(135deg, #D4AF37, #FF6B4A, #047857);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+    flex-shrink: 0;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #08111F;
+    display: block;
+}
+
+.hero-content {
+    max-width: 720px;
+    text-align: right;
+    margin-left: auto;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.7rem, 8vw, 5.2rem);
+    margin-bottom: 16px;
+    color: #F7D774;
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 3vw, 1.4rem);
+    margin-bottom: 26px;
+    line-height: 1.6;
 }
 
 /* Buttons */
-.btn{
-    display:inline-block;
-    padding:12px 25px;
-    background:#FF5733;
-    color:white;
-    text-decoration:none;
-    border-radius:6px;
-    font-weight:bold;
-    transition:0.3s;
+.btn {
+    display: inline-block;
+    padding: 13px 28px;
+    background: #D4AF37;
+    color: #08111F;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+    border: 2px solid #D4AF37;
 }
 
-.btn:hover{
-    background:#E64A19;
-    transform:translateY(-2px);
+.btn:hover,
+.btn:focus {
+    background: #FF6B4A;
+    border-color: #FF6B4A;
+    color: white;
+    transform: translateY(-2px);
 }
 
 /* Sections */
-section{
-    padding:80px 10%;
+section {
+    padding: 80px 10%;
 }
 
-h2{
-    text-align:center;
-    margin-bottom:30px;
-    color:#111827;
-    position:relative;
+section:nth-of-type(even) {
+    background: #FFFFFF;
 }
 
-h2::after{
-    content:"";
-    width:80px;
-    height:4px;
-    background:#FF5733;
-    display:block;
-    margin:10px auto;
-    border-radius:10px;
+h2 {
+    text-align: right;
+    margin-bottom: 35px;
+    color: #08111F;
+    position: relative;
+    font-size: 2.1rem;
+}
+
+h2::after {
+    content: "";
+    width: 90px;
+    height: 4px;
+    background: #D4AF37;
+    display: block;
+    margin: 12px 0 0 auto;
+    border-radius: 10px;
 }
 
 /* Cards */
-.card-container{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-    justify-content:center;
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: flex-end;
 }
 
-.card{
-    background:#FFFFFF;
-    width:300px;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
-    border-top:4px solid #FF5733;
-    transition:0.3s;
+.card {
+    background: #FFFFFF;
+    width: 300px;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 8px 28px rgba(8, 17, 31, 0.12);
+    border-top: 4px solid #D4AF37;
+    transition: 0.3s;
+    text-align: right;
 }
 
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 8px 25px rgba(0,0,0,.15);
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 34px rgba(8, 17, 31, 0.18);
 }
 
-/* Alternate Accent */
-.highlight{
-    color:#10B981;
-    font-weight:bold;
+.card h3 {
+    color: #08111F;
+    margin-bottom: 12px;
+}
+
+.card p {
+    line-height: 1.6;
+    color: #374151;
+}
+
+.highlight {
+    color: #047857;
+    font-weight: bold;
+}
+
+/* Contact */
+.contact-box {
+    max-width: 700px;
+    margin-left: auto;
+    text-align: right;
+    background: #08111F;
+    color: #FFF8E7;
+    padding: 35px;
+    border-radius: 8px;
+    border: 2px solid #D4AF37;
+}
+
+.contact-box p {
+    margin-bottom: 12px;
+    line-height: 1.6;
 }
 
 /* Footer */
-footer{
-    background:#111827;
-    color:white;
-    text-align:center;
-    padding:25px;
+footer {
+    background: #08111F;
+    color: #FFF8E7;
+    text-align: center;
+    padding: 25px;
+    border-top: 2px solid #D4AF37;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+    .hero-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-picture {
+        width: 220px;
+        height: 220px;
+    }
+
+    .hero-content {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    h2::after {
+        margin: 12px auto 0;
+    }
+
+    .card-container {
+        justify-content: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 360px;
+        text-align: center;
+    }
+
+    .contact-box {
+        margin: auto;
+        text-align: center;
+    }
+
+    nav ul {
+        gap: 14px;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    section {
+        padding: 60px 6%;
+    }
 }
 </style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#f4f4f4;color:#333}
-nav{background:#111;padding:15px;position:sticky;top:0}
-nav ul{list-style:none;display:flex;justify-content:center;gap:30px}
-nav a{color:white;text-decoration:none;font-weight:bold}
-.hero{height:90vh;background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('https://images.unsplash.com/photo-1546519638-68e109498ffc');background-size:cover;background-position:center;display:flex;justify-content:center;align-items:center;text-align:center;color:white}
-.hero-content h1{font-size:4rem;margin-bottom:15px}
-.btn{display:inline-block;padding:12px 25px;background:#ff9800;color:white;text-decoration:none;border-radius:5px}
-section{padding:70px 10%}
-h2{text-align:center;margin-bottom:30px}
-.card-container{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
-.card{background:white;width:300px;padding:20px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.1)}
-footer{background:#111;color:white;text-align:center;padding:20px}
-</style>
 </head>
+
 <body>
+
 <nav>
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#academics">Academics</a></li>
-<li><a href="#sports">Sports</a></li>
-<li><a href="#extracurriculars">Extracurriculars</a></li>
-<li><a href="#achievements">Achievements</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#academics">Academics</a></li>
+        <li><a href="#sports">Sports</a></li>
+        <li><a href="#extracurriculars">Extracurriculars</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 </nav>
+
 <section class="hero" id="home">
-<div class="hero-content">
-<h1>Rudra Yadav</h1>
-<p>Student Athlete | Basketball Player | Future Leader</p>
-<a href="#sports" class="btn">Explore My Journey</a>
-</div>
+    <div class="hero-layout">
+        <div class="profile-picture">
+            <img src="your-profile-photo.jpg" alt="Profile picture of Rudra Yadav">
+        </div>
+
+        <div class="hero-content">
+            <h1>Rudra Yadav</h1>
+            <p>Student Athlete | Basketball Player | Future Leader</p>
+            <a href="#sports" class="btn">Explore My Journey</a>
+        </div>
+    </div>
 </section>
-<section id="academics"><h2>Academics</h2></section>
-<section id="sports"><h2>Basketball</h2></section>
-<section id="extracurriculars"><h2>Extracurricular Activities</h2></section>
-<section id="achievements"><h2>Achievements</h2></section>
-<section id="contact"><h2>Contact</h2></section>
-<footer><p>© 2026 Rudra Yadav | Student Athlete Portfolio</p></footer>
+
+<section id="academics">
+    <h2>Academics</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Focused Learner</h3>
+            <p>I value discipline, consistency, and curiosity in the classroom.</p>
+        </div>
+        <div class="card">
+            <h3>Growth Mindset</h3>
+            <p>I believe every challenge is a chance to improve and become stronger.</p>
+        </div>
+        <div class="card">
+            <h3>Balanced Excellence</h3>
+            <p>I work to balance academics, athletics, leadership, and personal growth.</p>
+        </div>
+    </div>
+</section>
+
+<section id="sports">
+    <h2>Basketball</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Team Player</h3>
+            <p>Basketball has taught me trust, communication, and leadership under pressure.</p>
+        </div>
+        <div class="card">
+            <h3>Training Discipline</h3>
+            <p>I focus on skill development, stamina, court awareness, and competitive spirit.</p>
+        </div>
+        <div class="card">
+            <h3>Game Mentality</h3>
+            <p class="highlight">Hard work, confidence, and resilience define my approach to the game.</p>
+        </div>
+    </div>
+</section>
+
+<section id="extracurriculars">
+    <h2>Extracurricular Activities</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Leadership</h3>
+            <p>I enjoy taking initiative and helping others perform at their best.</p>
+        </div>
+        <div class="card">
+            <h3>Community</h3>
+            <p>I believe in contributing positively to my school and community environment.</p>
+        </div>
+        <div class="card">
+            <h3>Personal Development</h3>
+            <p>I keep building confidence, discipline, creativity, and communication skills.</p>
+        </div>
+    </div>
+</section>
+
+<section id="achievements">
+    <h2>Achievements</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Academic Progress</h3>
+            <p>Committed to steady improvement and strong performance across subjects.</p>
+        </div>
+        <div class="card">
+            <h3>Athletic Growth</h3>
+            <p>Developing as a basketball player through practice, teamwork, and competition.</p>
+        </div>
+        <div class="card">
+            <h3>Future Goals</h3>
+            <p>Working toward becoming a confident student athlete and future leader.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-box">
+        <p><strong>Rudra Yadav</strong></p>
+        <p>Student Athlete Portfolio</p>
+        <p>Email: your-email@example.com</p>
+        <a href="#home" class="btn">Back to Top</a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Rudra Yadav | Student Athlete Portfolio</p>
+</footer>
+
 </body>
 </html>
+```
