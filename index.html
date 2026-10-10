@@ -1,403 +1,697 @@
-Here’s the updated full code with the main text right-aligned and a dedicated profile picture area in the hero section.
-
-Replace `your-profile-photo.jpg` with your actual image file name or image link.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rudra Yadav | Student Athlete</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rudra Yadav </title>
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background: #FFF8E7;
-    color: #111827;
-}
-
-/* Navigation */
-nav {
-    background: #08111F;
-    padding: 16px 8%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 2px solid #D4AF37;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 28px;
-    flex-wrap: wrap;
-}
-
-nav a {
-    color: #FFF8E7;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-    outline: none;
-}
-
-nav a:hover,
-nav a:focus {
-    color: #D4AF37;
-}
-
-/* Hero Section */
-.hero {
-    min-height: 90vh;
-    background:
-        linear-gradient(rgba(8, 17, 31, 0.82), rgba(8, 17, 31, 0.82)),
-        url("https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1600&q=80");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    color: #FFF8E7;
-    padding: 60px 10%;
-}
-
-.hero-layout {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-}
-
-.profile-picture {
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    padding: 8px;
-    background: linear-gradient(135deg, #D4AF37, #FF6B4A, #047857);
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
-    flex-shrink: 0;
-}
-
-.profile-picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid #08111F;
-    display: block;
-}
-
-.hero-content {
-    max-width: 720px;
-    text-align: right;
-    margin-left: auto;
-}
-
-.hero-content h1 {
-    font-size: clamp(2.7rem, 8vw, 5.2rem);
-    margin-bottom: 16px;
-    color: #F7D774;
-}
-
-.hero-content p {
-    font-size: clamp(1rem, 3vw, 1.4rem);
-    margin-bottom: 26px;
-    line-height: 1.6;
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 13px 28px;
-    background: #D4AF37;
-    color: #08111F;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: 0.3s;
-    border: 2px solid #D4AF37;
-}
-
-.btn:hover,
-.btn:focus {
-    background: #FF6B4A;
-    border-color: #FF6B4A;
-    color: white;
-    transform: translateY(-2px);
-}
-
-/* Sections */
-section {
-    padding: 80px 10%;
-}
-
-section:nth-of-type(even) {
-    background: #FFFFFF;
-}
-
-h2 {
-    text-align: right;
-    margin-bottom: 35px;
-    color: #08111F;
-    position: relative;
-    font-size: 2.1rem;
-}
-
-h2::after {
-    content: "";
-    width: 90px;
-    height: 4px;
-    background: #D4AF37;
-    display: block;
-    margin: 12px 0 0 auto;
-    border-radius: 10px;
-}
-
-/* Cards */
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    justify-content: flex-end;
-}
-
-.card {
-    background: #FFFFFF;
-    width: 300px;
-    padding: 24px;
-    border-radius: 8px;
-    box-shadow: 0 8px 28px rgba(8, 17, 31, 0.12);
-    border-top: 4px solid #D4AF37;
-    transition: 0.3s;
-    text-align: right;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 14px 34px rgba(8, 17, 31, 0.18);
-}
-
-.card h3 {
-    color: #08111F;
-    margin-bottom: 12px;
-}
-
-.card p {
-    line-height: 1.6;
-    color: #374151;
-}
-
-.highlight {
-    color: #047857;
-    font-weight: bold;
-}
-
-/* Contact */
-.contact-box {
-    max-width: 700px;
-    margin-left: auto;
-    text-align: right;
-    background: #08111F;
-    color: #FFF8E7;
-    padding: 35px;
-    border-radius: 8px;
-    border: 2px solid #D4AF37;
-}
-
-.contact-box p {
-    margin-bottom: 12px;
-    line-height: 1.6;
-}
-
-/* Footer */
-footer {
-    background: #08111F;
-    color: #FFF8E7;
-    text-align: center;
-    padding: 25px;
-    border-top: 2px solid #D4AF37;
-}
-
-/* Mobile */
-@media (max-width: 800px) {
-    .hero-layout {
-        flex-direction: column;
-        align-items: center;
+  <style>
+    :root {
+      --bg: #0B0B0C;
+      --surface: #171717;
+      --surface2: #141414;
+      --text: #FFFFFF;
+      --text-secondary: #B6B6B6;
+      --muted: #7D7D7D;
+      --orange: #FF6A00;
+      --orange-hover: #FF7A1A;
+      --border: #2A2A2A;
+      --radius-small: 10px;
+      --radius-large: 20px;
+      --shadow-card: 0 10px 35px rgba(0, 0, 0, .28);
+      --shadow-button: 0 6px 22px rgba(255, 106, 0, .35);
     }
 
-    .profile-picture {
-        width: 220px;
-        height: 220px;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .hero-content {
-        text-align: center;
-        margin-left: 0;
+    html {
+      scroll-behavior: smooth;
     }
 
-    h2 {
-        text-align: center;
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, Arial, sans-serif;
     }
 
-    h2::after {
-        margin: 12px auto 0;
-    }
-
-    .card-container {
-        justify-content: center;
-    }
-
-    .card {
-        width: 100%;
-        max-width: 360px;
-        text-align: center;
-    }
-
-    .contact-box {
-        margin: auto;
-        text-align: center;
+    nav {
+      min-height: 90px;
+      padding: 16px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 11, 12, .85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
     }
 
     nav ul {
-        gap: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      list-style: none;
     }
 
     nav a {
-        font-size: 0.9rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      transition: color .3s ease;
     }
 
-    section {
-        padding: 60px 6%;
+    nav a:hover,
+    nav a:focus,
+    nav a.active {
+      color: var(--orange);
     }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-weight: 400;
+      letter-spacing: -.02em;
+      text-transform: uppercase;
+    }
+
+    .site-page {
+      display: none;
+      min-height: calc(100vh - 150px);
+    }
+
+    .site-page.active {
+      display: block;
+      animation: fadeUp .6s ease both;
+    }
+
+    .hero {
+      min-height: calc(100vh - 90px);
+      padding: 120px 10%;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .72)),
+        url("https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1800&q=85")
+        center / cover;
+    }
+
+    .hero-layout {
+      width: 100%;
+      max-width: 1300px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 55% 45%;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .eyebrow {
+      color: var(--orange);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      max-width: 720px;
+      font-size: clamp(4.4rem, 8vw, 110px);
+      line-height: .9;
+      margin-bottom: 24px;
+    }
+
+    .hero-content > p {
+      max-width: 620px;
+      color: var(--text-secondary);
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 34px;
+    }
+
+    .profile-picture {
+      justify-self: end;
+      width: min(100%, 440px);
+      aspect-ratio: .78;
+      filter: drop-shadow(0 25px 70px rgba(0, 0, 0, .45));
+    }
+
+    .profile-picture img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: var(--radius-large);
+      border: 1px solid var(--border);
+    }
+
+    .btn,
+    .page-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      padding: 18px 34px;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 12px;
+      transition: transform .3s ease, background .3s ease, border-color .3s ease;
+    }
+
+    .btn {
+      background: var(--orange);
+      border: 1px solid var(--orange);
+      box-shadow: var(--shadow-button);
+    }
+
+    .btn:hover,
+    .btn:focus {
+      background: var(--orange-hover);
+      border-color: var(--orange-hover);
+      transform: translateY(-3px) scale(1.02);
+    }
+
+    .portfolio-menu {
+      padding: 110px 10%;
+      background: var(--surface2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-inner,
+    .page-main {
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 38px;
+    }
+
+    .section-heading h2,
+    .page-heading h1 {
+      font-size: clamp(3.2rem, 6vw, 72px);
+      line-height: .95;
+    }
+
+    .section-heading p,
+    .page-heading p {
+      max-width: 520px;
+      color: var(--text-secondary);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .page-button {
+      min-height: 126px;
+      padding: 24px;
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-large);
+      box-shadow: var(--shadow-card);
+    }
+
+    .page-button:hover,
+    .page-button:focus {
+      background: #1D1D1D;
+      border-color: var(--orange);
+      transform: translateY(-6px);
+    }
+
+    .page-main {
+      min-height: calc(100vh - 150px);
+      padding: 110px 10%;
+    }
+
+    .page-heading {
+      max-width: 850px;
+      margin-bottom: 42px;
+    }
+
+    .page-heading h1 {
+      margin-bottom: 18px;
+    }
+
+    .content-space {
+      max-width: 980px;
+      padding: 32px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-large);
+      box-shadow: var(--shadow-card);
+    }
+
+    .content-space h2 {
+      color: var(--orange);
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .content-space p,
+    .content-space li {
+      color: var(--text-secondary);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .content-space ul {
+      padding-left: 22px;
+      margin-top: 16px;
+    }
+
+    .placeholder {.certificate-link {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 16px 24px;
+  background: var(--orange);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: var(--radius-small);
+  transition: background 0.3s ease, transform 0.3s ease;
 }
-</style>
+
+.certificate-link:hover {
+  background: var(--orange-hover);
+  transform: translateY(-3px);
+}
+      margin-top: 28px;
+      padding: 20px;
+      color: var(--text-secondary);
+      background: #1D1D1D;
+      border-left: 4px solid var(--orange);
+      border-radius: var(--radius-small);
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .contact-item {
+      padding: 18px;
+      color: var(--text-secondary);
+      background: #1D1D1D;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-small);
+    }
+    .contact-item a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #007BFF;
+}
+    .contact-item a {
+    color: inherit;           /* Same color as the text */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #007BFF;           /* Blue when hovered */
+}
+
+    footer {
+      padding: 30px 10%;
+      text-align: center;
+      color: var(--muted);
+      background: var(--surface2);
+      border-top: 1px solid var(--border);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        min-height: 72px;
+        padding: 16px 5%;
+      }
+
+      nav ul {
+        gap: 20px;
+      }
+
+      .hero {
+        padding: 80px 6%;
+      }
+
+      .hero-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-picture {
+        justify-self: start;
+        width: min(100%, 330px);
+      }
+
+      .portfolio-menu,
+      .page-main {
+        padding: 80px 6%;
+      }
+
+      .button-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 520px) {
+      nav ul {
+        gap: 12px 18px;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+
+      .hero h1 {
+        font-size: 58px;
+      }
+
+      .button-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .content-space {
+        padding: 24px;
+      }
+    }
+    .certificate-link {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 16px 24px;
+  background: var(--orange);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: var(--radius-small);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.certificate-link:hover {
+  background: var(--orange-hover);
+  transform: translateY(-3px);
+}
+  </style>
 </head>
 
 <body>
 
-<nav>
+  <nav aria-label="Primary navigation">
     <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#academics">Academics</a></li>
-        <li><a href="#sports">Sports</a></li>
-        <li><a href="#extracurriculars">Extracurriculars</a></li>
-        <li><a href="#achievements">Achievements</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <li><a href="?page=home" data-page-link="home">Home</a></li>
+      <li><a href="?page=academics" data-page-link="academics">Academics</a></li>
+      <li><a href="?page=sports" data-page-link="sports">Sports</a></li>
+      <li><a href="?page=skills" data-page-link="skills">Skills</a></li>
+      <li><a href="?page=extracurriculars" data-page-link="extracurriculars">Activities</a></li>
+      <li><a href="?page=achievements" data-page-link="achievements">Achievements</a></li>
+      <li><a href="?page=contact" data-page-link="contact">Contact</a></li>
+      
     </ul>
-</nav>
+  </nav>
 
-<section class="hero" id="home">
-    <div class="hero-layout">
-        <div class="profile-picture">
-            <img src="your-profile-photo.jpg" alt="Profile picture of Rudra Yadav">
-        </div>
+  <main>
 
-        <div class="hero-content">
+    <section class="site-page" data-page="home">
+      <section class="hero">
+        <div class="hero-layout">
+          <div class="hero-content">
+            <p class="eyebrow">Student Athlete</p>
             <h1>Rudra Yadav</h1>
-            <p>Student Athlete | Basketball Player | Future Leader</p>
-            <a href="#sports" class="btn">Explore My Journey</a>
+            <p>
+              Basketball Enthusiast, Future Leader—driven by
+              discipline on the court and curiosity beyond it.
+            </p>
+            <a class="btn" href="?page=sports">Explore My Journey</a>
+          </div>
+
+          <div class="profile-picture">
+            <img src="your-profile-photo.jpg" alt="Profile picture of Rudra Yadav">
+          </div>
         </div>
-    </div>
+      </section>
+
+      <section class="portfolio-menu">
+        <div class="section-inner">
+          <div class="section-heading">
+            <h2>Explore the portfolio</h2>
+            <p>
+              Choose a page to learn more about my academic, athletic, and
+              personal journey.
+            </p>
+          </div>
+
+          <div class="button-grid">
+            <a class="page-button" href="?page=academics">Academics</a>
+            <a class="page-button" href="?page=sports">Basketball</a>
+            <a class="page-button" href="?page=extracurriculars">Extracurriculars</a>
+            <a class="page-button" href="?page=achievements">Achievements</a>
+            <a class="page-button" href="?page=contact">Contact</a>
+            <a class="page-button" href="?page=skills">Skills</a>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="site-page" data-page="academics">
+      <div class="page-main">
+        <header class="page-heading">
+          <p class="eyebrow">Portfolio Page</p>
+          <h1>Academics</h1>
+          <p>A dedicated space for academic details, subjects, grades, school projects, and learning goals.</p>
+        </header>
+
+        <section class="content-space">
+          <h2>Academic Profile</h2>
+          <p>Write your academic information here later.</p>
+          <ul>
+            <li>Subjects and strengths</li>
+            <li>Grades or academic progress</li>
+            <li>Projects and competitions</li>
+            <li>Future learning goals</li>
+          </ul>
+          <div class="placeholder">Add your detailed academic content here.</div>
+        </section>
+      </div>
+    </section>
+
+    <section class="site-page" data-page="sports">
+      <div class="page-main">
+        <header class="page-heading">
+          <p class="eyebrow">Portfolio Page</p>
+          <h1>Basketball</h1>
+          <p>A space for training routines, position, match experience, teamwork, and athletic development.</p>
+        </header>
+
+        <section class="content-space">
+          <h2>Sports Profile</h2>
+          <p>Write your basketball details here later.</p>
+          <ul>
+            <li>Playing position ; Shooting Guard </li>
+            <li>Training schedule</li>
+            <li>Team role</li>
+            <li>Matches, tournaments, and goals</li>
+          </ul>
+          <div class="placeholder">Add your basketball journey and achievements here.</div>
+        </section>
+      </div>
+    </section>
+
+    <section class="site-page" data-page="extracurriculars">
+      <div class="page-main">
+        <header class="page-heading">
+          <p class="eyebrow">Portfolio Page</p>
+          <h1>Extracurricular Activities</h1>
+          <p>A place for leadership roles, clubs, volunteering, creative activities, and school involvement.</p>
+        </header>
+
+        <section class="content-space">
+          <h2>Activities Profile</h2>
+          <p>Write your extracurricular information here later.</p>
+          <ul>
+            <li>Leadership roles</li>
+            <li>Clubs and societies</li>
+            <li>Community service</li>
+            <li>Hobbies and interests</li>
+          </ul>
+          <div class="placeholder">Add your activity details here.</div>
+        </section>
+      </div>
+    </section>
+
+    <section class="site-page" data-page="achievements">
+      <div class="page-main">
+        <header class="page-heading">
+          <p class="eyebrow"></p>
+          <h1>Achievements</h1>
+          <p>A professional section for awards, certificates, recognitions, milestones, and future ambitions.</p>
+        </header>
+
+        <section class="content-space">
+          <h2>Certificates</h2>
+
+<p>
+  View my certificates, awards, and achievements.
+</p>
+
+<a
+  class="certificate-link"
+  href="https://drive.google.com/drive/folders/1tdFCqjeHTPZA6uOjcXPAdPXNhnJ59ta8?usp=drive_link"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  View Certificates &amp; Achievements
+</a>
+        </section>
+      </div>
+    </section>
+
+    <section class="site-page" data-page="skills">
+  <div class="page-main">
+    <header class="page-heading">
+      <p class="eyebrow"></p>
+      <h1>Skills</h1>
+      <p>
+        A collection of my abilities, strengths, and areas of development.
+      </p>
+    </header>
+
+    <section class="content-space">
+      <h2>My Skills</h2>
+
+      <ul>
+        <li>Communication</li>
+        <li>Teamwork</li>
+        <li>Leadership</li>
+        <li>Basketball</li>
+        <li>Time management</li>
+        <li>Problem solving</li>
+      </ul>
+    </section>
+  </div>
 </section>
 
-<section id="academics">
-    <h2>Academics</h2>
-    <div class="card-container">
-        <div class="card">
-            <h3>Focused Learner</h3>
-            <p>I value discipline, consistency, and curiosity in the classroom.</p>
-        </div>
-        <div class="card">
-            <h3>Growth Mindset</h3>
-            <p>I believe every challenge is a chance to improve and become stronger.</p>
-        </div>
-        <div class="card">
-            <h3>Balanced Excellence</h3>
-            <p>I work to balance academics, athletics, leadership, and personal growth.</p>
-        </div>
-    </div>
-</section>
+    <section class="site-page" data-page="contact">
+      <div class="page-main">
+        <header class="page-heading">
+          <p class="eyebrow"> </p>
+          <h1>Contact</h1>
+          <p> </p>
+        </header>
 
-<section id="sports">
-    <h2>Basketball</h2>
-    <div class="card-container">
-        <div class="card">
-            <h3>Team Player</h3>
-            <p>Basketball has taught me trust, communication, and leadership under pressure.</p>
-        </div>
-        <div class="card">
-            <h3>Training Discipline</h3>
-            <p>I focus on skill development, stamina, court awareness, and competitive spirit.</p>
-        </div>
-        <div class="card">
-            <h3>Game Mentality</h3>
-            <p class="highlight">Hard work, confidence, and resilience define my approach to the game.</p>
-        </div>
-    </div>
-</section>
+        <section class="content-space">
+          
+          <h2>Contact Details</h2>
+         
 
-<section id="extracurriculars">
-    <h2>Extracurricular Activities</h2>
-    <div class="card-container">
-        <div class="card">
-            <h3>Leadership</h3>
-            <p>I enjoy taking initiative and helping others perform at their best.</p>
-        </div>
-        <div class="card">
-            <h3>Community</h3>
-            <p>I believe in contributing positively to my school and community environment.</p>
-        </div>
-        <div class="card">
-            <h3>Personal Development</h3>
-            <p>I keep building confidence, discipline, creativity, and communication skills.</p>
-        </div>
-    </div>
-</section>
+          <div class="contact-list">
+            <div class="contact-item">Email: <a href="mailto:rpsy05@gmail.com?subject=Hello%20Rudra">
+    rpsy05@gmail.com
+</a>
 
-<section id="achievements">
-    <h2>Achievements</h2>
-    <div class="card-container">
-        <div class="card">
-            <h3>Academic Progress</h3>
-            <p>Committed to steady improvement and strong performance across subjects.</p>
-        </div>
-        <div class="card">
-            <h3>Athletic Growth</h3>
-            <p>Developing as a basketball player through practice, teamwork, and competition.</p>
-        </div>
-        <div class="card">
-            <h3>Future Goals</h3>
-            <p>Working toward becoming a confident student athlete and future leader.</p>
-        </div>
-    </div>
-</section>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <div class="contact-box">
-        <p><strong>Rudra Yadav</strong></p>
-        <p>Student Athlete Portfolio</p>
-        <p>Email: your-email@example.com</p>
-        <a href="#home" class="btn">Back to Top</a>
-    </div>
-</section>
+            
+            </div>
+            <div class="contact-item">
+    Phone:
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rpsy05@gmail.com&su=Phone%20Number%20Request&body=Hello%20Rudra,%0A%0AI%20would%20like%20to%20request%20your%20phone%20number.%0A%0AName:%20%0AOrganization:%20%0AReason:%20" target="_blank">
+        Request Access
+    </a>
+</div>
+ <div class="contact-item">
+    Socials:
+    <a href="https://www.linkedin.com/in/rudra-yadav-046111399/" target="_blank">
+        LinkedIn
+    </a>
+</div>
+           
+           
+          
+            
+          </div>
+        </section>
+      </div>
+    </section>
 
-<footer>
-    <p>© 2026 Rudra Yadav | Student Athlete Portfolio</p>
-</footer>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Rudra Yadav | Student Athlete Portfolio</p>
+  </footer>
+
+  <script>
+    const allowedPages = [
+      "home",
+      "academics",
+      "sports",
+      "extracurriculars",
+      "achievements",
+      "skills",
+      "contact",
+      
+    ];
+
+    const selectedPage = new URLSearchParams(window.location.search).get("page") || "home";
+    const currentPage = allowedPages.includes(selectedPage) ? selectedPage : "home";
+
+    document.querySelectorAll(".site-page").forEach(page => {
+      page.classList.toggle("active", page.dataset.page === currentPage);
+    });
+
+    document.querySelectorAll("[data-page-link]").forEach(link => {
+      link.classList.toggle("active", link.dataset.pageLink === currentPage);
+    });
+
+    document.title =
+      currentPage === "home"
+        ? "Rudra Yadav | Student Athlete Portfolio"
+        : currentPage.charAt(0).toUpperCase() + currentPage.slice(1) + " | Rudra Yadav";
+  </script>
 
 </body>
 </html>
-```
+
